@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation"
+            app:startDestination="@id/mainFragment">
+
+    <fragment android:id="@+id/mainFragment"
+              android:name="com.example.architechturecomponents.MainFragment"
+              android:label="fragment_main"
+              tools:layout="@layout/fragment_main">
+        <action android:id="@+id/action_mainFragment_to_chooseRecipantFragment"
+                app:destination="@id/chooseRecipantFragment"/>
+
+        <action android:id="@+id/action_mainFragment_to_viewTransactionFragment"
+                app:destination="@id/viewTransactionFragment"/>
+
+        <action android:id="@+id/action_mainFragment_to_viewBalanceFragment"
+                app:destination="@id/viewBalanceFragment"/>
+
+    </fragment>
+
+    <fragment android:id="@+id/viewTransactionFragment"
+              android:name="com.example.architechturecomponents.ViewTransactionFragment"
+              android:label="fragment_view_transaction"
+              tools:layout="@layout/fragment_view_transaction"/>
+
+    <fragment android:id="@+id/confirmationFragment"
+              android:name="com.example.architechturecomponents.ConfirmationFragment"
+              android:label="fragment_confirmation"
+              tools:layout="@layout/fragment_confirmation"/>
+
+    <fragment android:id="@+id/specifyAmountFragment"
+              android:name="com.example.architechturecomponents.SpecifyAmountFragment"
+              android:label="fragment_specify_amountfragment"
+              tools:layout="@layout/fragment_specify_amountfragment">
+        <action android:id="@+id/action_specifyAmountFragment_to_confirmationFragment"
+                app:destination="@id/confirmationFragment"/>
+    </fragment>
+
+    <fragment android:id="@+id/viewBalanceFragment"
+              android:name="com.example.architechturecomponents.ViewBalanceFragment"
+              android:label="fragment_view_balance"
+              tools:layout="@layout/fragment_view_balance"/>
+
+    <fragment android:id="@+id/chooseRecipantFragment"
+              android:name="com.example.architechturecomponents.ChooseRecipantFragment"
+              android:label="ChooseRecipantFragment">
+        <action android:id="@+id/action_chooseRecipantFragment_to_specifyAmountFragment"
+                app:destination="@id/specifyAmountFragment"/>
+    </fragment>
+
+</navigation>
