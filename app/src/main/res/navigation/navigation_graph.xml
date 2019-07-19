@@ -5,48 +5,80 @@
             app:startDestination="@id/mainFragment">
 
     <fragment android:id="@+id/mainFragment"
-              android:name="com.example.architechturecomponents.MainFragment"
+              android:name="com.example.architechturecomponents.Fragments.MainFragment"
               android:label="fragment_main"
               tools:layout="@layout/fragment_main">
-        <action android:id="@+id/action_mainFragment_to_chooseRecipantFragment"
-                app:destination="@id/chooseRecipantFragment"/>
+        <action
+                android:id="@+id/action_mainFragment_to_chooseRecipantFragment"
+                app:destination="@id/chooseRecipantFragment"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+        />
 
         <action android:id="@+id/action_mainFragment_to_viewTransactionFragment"
-                app:destination="@id/viewTransactionFragment"/>
+                app:destination="@id/viewTransactionFragment"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"/>
 
         <action android:id="@+id/action_mainFragment_to_viewBalanceFragment"
-                app:destination="@id/viewBalanceFragment"/>
+                app:destination="@id/viewBalanceFragment"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"/>
 
     </fragment>
 
     <fragment android:id="@+id/viewTransactionFragment"
-              android:name="com.example.architechturecomponents.ViewTransactionFragment"
+              android:name="com.example.architechturecomponents.Fragments.ViewTransactionFragment"
               android:label="fragment_view_transaction"
               tools:layout="@layout/fragment_view_transaction"/>
 
     <fragment android:id="@+id/confirmationFragment"
-              android:name="com.example.architechturecomponents.ConfirmationFragment"
+              android:name="com.example.architechturecomponents.Fragments.ConfirmationFragment"
               android:label="fragment_confirmation"
-              tools:layout="@layout/fragment_confirmation"/>
+              tools:layout="@layout/fragment_confirmation">
+        <argument android:name="recipient"
+                  android:defaultValue="None" />
+
+        <argument android:name="amount"
+                  app:argType="com.example.architechturecomponents.Models.Money" />
+    </fragment>
 
     <fragment android:id="@+id/specifyAmountFragment"
-              android:name="com.example.architechturecomponents.SpecifyAmountFragment"
+              android:name="com.example.architechturecomponents.Fragments.SpecifyAmountFragment"
               android:label="fragment_specify_amountfragment"
               tools:layout="@layout/fragment_specify_amountfragment">
         <action android:id="@+id/action_specifyAmountFragment_to_confirmationFragment"
-                app:destination="@id/confirmationFragment"/>
+                app:destination="@id/confirmationFragment"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"/>
     </fragment>
 
     <fragment android:id="@+id/viewBalanceFragment"
-              android:name="com.example.architechturecomponents.ViewBalanceFragment"
+              android:name="com.example.architechturecomponents.Fragments.ViewBalanceFragment"
               android:label="fragment_view_balance"
               tools:layout="@layout/fragment_view_balance"/>
 
     <fragment android:id="@+id/chooseRecipantFragment"
-              android:name="com.example.architechturecomponents.ChooseRecipantFragment"
+              android:name="com.example.architechturecomponents.Fragments.ChooseRecipantFragment"
               android:label="ChooseRecipantFragment">
+
+        <argument android:name="recipient"
+                  android:defaultValue="None" />
+
         <action android:id="@+id/action_chooseRecipantFragment_to_specifyAmountFragment"
-                app:destination="@id/specifyAmountFragment"/>
+                app:destination="@id/specifyAmountFragment"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"/>
     </fragment>
 
 </navigation>

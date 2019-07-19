@@ -1,12 +1,15 @@
-package com.example.architechturecomponents
+package com.example.architechturecomponents.Fragments
 
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.example.architechturecomponents.R
 import kotlinx.android.synthetic.main.fragment_choose_recipant.*
 import kotlinx.android.synthetic.main.fragment_specify_amountfragment.cancel_btn
 
@@ -37,7 +40,10 @@ class ChooseRecipantFragment : Fragment(), View.OnClickListener {
             }
 
             R.id.next_btn -> {
-                navController.navigate(R.id.action_chooseRecipantFragment_to_specifyAmountFragment)
+                if(TextUtils.isEmpty(input_recipient.text.toString())) {
+                    val bundle = bundleOf("recipient" to input_recipient.text.toString())
+                    navController.navigate(R.id.action_chooseRecipantFragment_to_specifyAmountFragment, bundle)
+                }
             }
         }
     }

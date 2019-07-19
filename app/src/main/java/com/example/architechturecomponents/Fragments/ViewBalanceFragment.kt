@@ -1,26 +1,20 @@
-package com.example.architechturecomponents
-
+package com.example.architechturecomponents.Fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.example.architechturecomponents.R
 
 
-/**
- * A simple [Fragment] subclass.
- *
- */
-class ConfirmationFragment : Fragment() {
+class ViewBalanceFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_confirmation, container, false)
+        return inflater.inflate(R.layout.fragment_view_balance, container, false)
     }
-
-
 }

@@ -1,7 +1,8 @@
-package com.example.architechturecomponents
+package com.example.architechturecomponents.Fragments
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.architechturecomponents.R
 
 class MainActivity : AppCompatActivity() {
 
